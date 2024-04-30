@@ -49,7 +49,7 @@ class LevePage(PageTemplate):
         from components.infer_media_component import InferJPGComponent, InferPNGComponent
 
         st.write("#### What type of media would you like to check depth for?")
-        option = st.selectbox("", ("JPG Image", "PNG Image"))
+        option = st.selectbox("#", ("JPG Image", "PNG Image"))
         if option == "JPG Image":
             image_media_component = InferJPGComponent()
             image_media_component.build()
