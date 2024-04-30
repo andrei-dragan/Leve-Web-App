@@ -24,8 +24,11 @@ class HomePage(PageTemplate):
         super().__init__()
 
     def set_body(self):
-        st.title("Welcome to Leve - our Lightweight Depth Estimation Model")
-        st.write("This app is a simple demonstration of depth estimation using our Leve pre-trained model.")
+        st.title("Welcome to Leve! :wave:")
+        st.markdown("From latin: *levis/leve, levis M [adj] - simple, light*")
+        st.write("#### Leve is a lightweight depth estimation model that can be used to estimate depth from images.")
+        st.write("######  You can find more about us by navigating through the sidebar. Or if you want to directly try Leve, click the button below.")
+        st.link_button("Get Started", "Leve")
 
 
 class AboutPage(PageTemplate):
@@ -34,7 +37,8 @@ class AboutPage(PageTemplate):
 
     def set_body(self):
         st.title("About Leve")
-        st.write("...")
+        st.write("#### We are building this page.... 👷‍♂️")
+        st.write("The abstract is not written yet, so we appreciate your patience. 😶")
 
 
 class LevePage(PageTemplate):
@@ -44,7 +48,8 @@ class LevePage(PageTemplate):
     def set_body(self):
         from components.infer_media_component import InferJPGComponent, InferPNGComponent
 
-        option = st.selectbox("What type of media would you like to check depth for?", ("JPG Image", "PNG Image"))
+        st.write("#### What type of media would you like to check depth for?")
+        option = st.selectbox("", ("JPG Image", "PNG Image"))
         if option == "JPG Image":
             image_media_component = InferJPGComponent()
             image_media_component.build()
