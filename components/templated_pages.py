@@ -11,7 +11,7 @@ class PageTemplate(ABC):
         self.set_body()
 
     def set_generic_header(self):
-        st.markdown("🦉 **Leve - our lightweight depth estimation model**")
+        st.markdown("☀️ **Leve - the lightweight depth estimation model**")
         st.divider()
 
     @abstractmethod
@@ -29,16 +29,6 @@ class HomePage(PageTemplate):
         st.write("#### Leve is a lightweight depth estimation model that can be used to estimate depth from images.")
         st.write("######  You can find more about us by navigating through the sidebar. Or if you want to directly try Leve, click the button below.")
         st.link_button("Get Started", "Leve")
-
-
-class AboutPage(PageTemplate):
-    def __init__(self):
-        super().__init__()
-
-    def set_body(self):
-        st.title("About Leve")
-        st.write("#### We are building this page.... 👷‍♂️")
-        st.write("The abstract is not written yet, so we appreciate your patience. 😶")
 
 
 class LevePage(PageTemplate):
